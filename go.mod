@@ -1,8 +1,10 @@
 module github.com/sagernet/sing-box
 
-go 1.24.7
+go 1.25.6
 
 require github.com/amnezia-vpn/amneziawg-go v0.2.16
+
+require github.com/hiddify/hmrd_multi_resolver_dns v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/Psiphon-Labs/psiphon-tunnel-core v1.0.11-0.20260126173038-c86a1497a760
@@ -269,3 +271,8 @@ replace github.com/Psiphon-Labs/quic-go => ./replace/psiphon-quic-go
 replace github.com/Psiphon-Labs/psiphon-tls => ./replace/psiphon-tls
 
 replace github.com/net2share/vaydns => github.com/hiddify/vaydns v0.0.0-20260401180616-890dc987a6a9
+
+// Local-dev replace: points to the sibling checkout while the library is
+// landing. Once hiddify/hmrd_multi_resolver_dns is tagged, swap this for a
+// real pseudo-version in the require block above and drop the replace.
+replace github.com/hiddify/hmrd_multi_resolver_dns => ../hmrd_multi_resolver_dns
